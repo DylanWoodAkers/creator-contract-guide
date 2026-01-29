@@ -1,7 +1,13 @@
 {
-  "buildCommand": "",
-  "outputDirectory": ".",
   "routes": [
-    { "src": "/(.*)", "dest": "/index.html" }
-  ]
+    { "src": "/blog/content-creator-contract-template/?", "dest": "/blog/content-creator-contract-template/index.html" },
+    { "src": "/blog/ugc-usage-rights-explained/?", "dest": "/blog/ugc-usage-rights-explained/index.html" },
+    { "src": "/blog/exclusivity-clauses-guide/?", "dest": "/blog/exclusivity-clauses-guide/index.html" },
+    { "src": "/blog/payment-terms-red-flags/?", "dest": "/blog/payment-terms-red-flags/index.html" },
+    { "src": "/blog/how-to-review-brand-contracts/?", "dest": "/blog/how-to-review-brand-contracts/index.html" },
+    { "src": "/blog/?", "dest": "/blog/index.html" }
+  ],
+  "env": {
+    "RESEND_API_KEY": "@resend_api_key"
+  }
 }
