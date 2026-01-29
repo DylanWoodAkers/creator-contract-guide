@@ -1,5 +1,4 @@
 // Vercel Serverless Function - Email Signup via Resend
-// API Key: re_3quFg5WX_PSSjJAJMUt7nF96P3kAvikrL
 
 export default async function handler(req, res) {
     // CORS headers
@@ -21,7 +20,12 @@ export default async function handler(req, res) {
         return res.status(400).json({ error: 'Valid email required' });
     }
 
-    const RESEND_API_KEY = process.env.RESEND_API_KEY || 're_3quFg5WX_PSSjJAJMUt7nF96P3kAvikrL';
+    const RESEND_API_KEY = process.env.RESEND_API_KEY;
+    
+    if (!RESEND_API_KEY) {
+        console.error('RESEND_API_KEY not configured');
+        return res.status(500).json({ error: 'Server configuration error' });
+    }
 
     // Email content - Red Flags Checklist
     const emailHtml = `
